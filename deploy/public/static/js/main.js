@@ -1,0 +1,3 @@
+$(function() {
+	$('.dropdown-toggle').dropdown();
+});
