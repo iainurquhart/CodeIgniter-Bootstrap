@@ -89,7 +89,7 @@
         <script src="<?=base_url()?>static/js/vendor/bootstrap/bootstrap.min.js"></script>
 
         <?php foreach($this->scripts as $script):?>
-    		<script src="<?php echo base_url(); ?><?=base_url()?>static/js/<?=$script?>.js"></script>
+    		<script src="<?=base_url()?>static/js/<?=$script?>.js"></script>
 		<?php endforeach ?>
 
         <script src="<?=base_url()?>static/js/main.js"></script>
