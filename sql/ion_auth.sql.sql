@@ -42,7 +42,7 @@ CREATE TABLE `users` (
   `active` tinyint(1) unsigned DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL
+  `company` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
