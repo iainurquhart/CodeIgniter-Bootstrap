@@ -30,7 +30,7 @@
 						<td class="id-col"><?php echo $user->id;?></td>
 						<td class="firstnam-col"><?php echo $user->first_name;?></td>
 						<td class="lastname-col"><?php echo $user->last_name;?></td>
-						<td class="email-col"><?php echo anchor('mailto:'.$user->email, $user->email);?></td>
+						<td class="email-col"><?php echo mailto($user->email, $user->email);?></td>
 						<td class="groups-col">
 							<?php $i=1; foreach ($user->groups as $group):?>
 								<?php 

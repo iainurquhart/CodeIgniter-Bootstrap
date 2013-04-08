@@ -34,7 +34,7 @@
 
 			<div class="control-group">
 				<div class="controls">
-					<button type="submit" class="btn btn-primary"><?=lang('create_user_submit_btn')?></button>
+					<button type="submit" class="btn btn-primary"><?=lang('change_password_submit_btn')?></button>
 				</div>
 			</div>
 
