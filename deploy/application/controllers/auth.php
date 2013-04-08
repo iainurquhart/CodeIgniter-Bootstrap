@@ -491,7 +491,7 @@ class Auth extends MY_Controller {
 	}
 
 	//edit a user
-	function edit_user($id)
+	function edit_user($id = '')
 	{
 		$this->data['title'] = "Edit User";
 
@@ -500,15 +500,21 @@ class Auth extends MY_Controller {
 			redirect('auth', 'refresh');
 		}
 
+		if(!$id)
+		{
+			$id = $this->ion_auth->get_user_id();
+		}
+
 		$user = $this->ion_auth->user($id)->row();
+
+		if(!$user)
+		{
+			$this->session->set_flashdata('message', "User not found!");
+			redirect("auth", 'refresh');
+		}
+
 		$groups=$this->ion_auth->groups()->result_array();
 		$currentGroups = $this->ion_auth->get_users_groups($id)->result();
-
-		//process the phone number
-		if (isset($user->phone) && !empty($user->phone))
-		{
-			$user->phone = explode('-', $user->phone);
-		}
 
 		//validate form input
 		$this->form_validation->set_rules('first_name', $this->lang->line('edit_user_validation_fname_label'), 'required|xss_clean');
